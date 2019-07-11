@@ -1,0 +1,74 @@
+
+<body style = "text-align : center">
+
+    <form > 
+                
+            <div class="form-group">
+    
+                
+                <label>Enter the CustomerID<input type="number" class="form-control" style="font-size: 80%" minlength="10" maxlength="10" placeholder="CustomerID"  pattern="[0-9]*" name="CustomerID" ngModel required #custid = "ngModel" /></label>
+
+                    <div *ngIf="!custid.valid  && (custid.dirty || custid.touched)" class="alert alert-danger">
+
+                        <div *ngIf="custid.errors.required">
+                            CustomerID is required.
+                        </div>
+
+                        <div *ngIf="custid.errors.minlength">
+                            CustomerID must be at least 10 characters long.
+                            <br>
+                            Enter only numbers.
+                        </div>
+
+                     </div>
+                
+            </div>
+    
+    
+                <br>
+                <br>
+               
+    
+            <div class="form-group">
+    
+                <label>Enter the Password<input type="password" class="form-control" style="font-size: 80%" minlength="10" maxlength="10" placeholder="Password" name= "pass" ngModel required #up = ngModel/></label>
+                
+                    <div *ngIf="!up.valid  && (up.dirty || up.touched)" class="alert alert-danger">
+
+                        <div *ngIf="up.errors.required">
+                            Password is required.
+                        </div>
+
+                        <div *ngIf="up.errors.minlength">
+                            Password must be at least 10 characters long.
+                        </div>
+
+                    </div>
+
+            </div>
+    
+    
+                <br>
+                <br>
+
+    
+            <div class="container">
+            <button type="submit"  class="btn btn-success">LOGIN</button>
+            </div>
+    
+
+                <br>
+                <br>
+
+    
+            <label>Do not have an account?&nbsp;&nbsp;&nbsp;</label>
+           
+            <a type="button" class="btn btn-primary" routerLink="/signup" routerLinkActive="active">SIGN UP</a>
+           
+             
+    </form>
+    
+    </body>
+    
+    
+    

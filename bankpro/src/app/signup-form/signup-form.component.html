@@ -1,0 +1,106 @@
+
+<div style = "text-align : center" [hidden]="submitted">
+
+
+    <form class="form-group" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+
+            <label>First Name<input type="text" class="form-control" placeholder="First Name" name="firstName" [(ngModel)]="user.firstName" required #fn = ngModel/></label> 
+
+                <div *ngIf="!fn.valid  && (fn.dirty || fn.touched)" class="alert alert-danger">
+
+                    <div *ngIf="fn.errors.required">
+                     First Name is required.
+                    </div>
+
+                </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Last Name<input type="text" class="form-control" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName" required #ln = ngModel/></label> 
+
+                <div *ngIf="ln.valid  && (ln.dirty || ln.touched)" class="alert alert-danger">
+
+                    <div *ngIf="ln.errors.required">
+                     Last Name is required.
+                    </div>
+
+                </div>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>User Name<input type="text" class="form-control"  placeholder="User Name" name="username" [(ngModel)]="user.username"  required #un = ngModel/></label> 
+        
+                <div *ngIf="un.valid  && (un.dirty || un.touched)" class="alert alert-danger">
+
+                    <div *ngIf="un.errors.required">
+                     User Name is required.
+                    </div>
+
+                </div>
+
+        </div>
+
+
+        <div class="form-group">
+            
+            <label>Password<input type="password" class="form-control" placeholder="Password" name= "password" [(ngModel)]="user.password"  required #up = ngModel/></label>
+
+                     <div *ngIf="up.valid  && (up.dirty || up.touched)" class="alert alert-danger">
+
+                        <div *ngIf="up.errors.required">
+                         Password is required.
+                        </div>
+                    </div>
+        </div>
+
+
+        <div class="form-group">  
+        
+            <label>Email<input type="email" class="form-control" placeholder="Email" name = "email" [(ngModel)]="user.email" required  #ue = ngModel/></label>
+
+                <div *ngIf="ue.valid  && (ue.dirty || ue.touched)" class="alert alert-danger">
+
+                    <div *ngIf="ue.errors.required">
+                     Email Name is required.
+                    </div>
+
+                </div>
+        </div>
+
+
+        <div class="form-group">  
+        
+            <label>Phone Number<input type="text" class="form-control" placeholder="Phone Number" name = "phone" [(ngModel)]="user.phone" pattern="[0-9]*" maxlength="10" required #uph = ngModel/></label>
+
+                <div *ngIf="uph.valid  && (uph.dirty || uph.touched)" class="alert alert-danger">
+
+                    <div *ngIf="uph.errors.required">
+                     Phone Number is required.
+                    </div>
+
+                </div>
+
+        </div>
+    
+            <br>
+            <br>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+    
+</div>
+
+
+
+
+   
